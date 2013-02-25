@@ -2,7 +2,7 @@
   "name": "MetroClick Demo",
   "description": "Test",
   "manifest_version": 2,
-  "version": "1",
+  "version": "0.1",
   "app": {
     "launch": {
       "local_path": "index.html"
