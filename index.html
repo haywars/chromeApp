@@ -1,8 +1,53 @@
-<html>
+<!doctype html>
 <head>
 <title>Test</title>
-<body>
-<p>Hello World</p>
-</body>
+<script>
+	onload = setTime(init, 0);
+
+	function init() {
+		flight = document.getElementById('flight');
+		time = xpath('//span[@class="time"]', document);
+		to = xpath('//span[@class="to"]', document);
+		carrier = xpath('//span[@class="carrier"]', document);
+		flightno = xpath('//span[@class="flightno"]', document);
+		status = xpath('//span[@class="status"]', document);
+		terminal = xpath('//span[@class="terminal"]', document);
+		gate = xpath('//span[@class="gate"]', document);
+		airport = xpath('//span[@class="airport"]', document);
+
+		getFlights();
+	}
+
+	function getFlights() {
+		req = new XMLHttpRequest();
+		req.open('GET', 'https://www.flighttimetv.com/fttv/demoxml.asp?CID=80&PCID=177');
+		req.onload = processDep;
+		req.send();
+	}
+
+	function processDep() {
+		var res = JSON.parse(req.responseText);
+		departures = res.concat(depatures);
+		update();
+	}
+
+	for (var i in depatures) {
+		console.log(depatures);
+	}
+</script>
 </head>
+<body>
+	<p>Hello World</p>
+	<div id="flight" class="clearfix">
+		<span class="time"></span>
+		<span class="to"></span>
+		<span class="carrier"></span>
+		<span class="flightno"></span>
+		<span class="status"></span>
+		<span class="terminal"></span>
+		<span class="gate"></span>
+		<span class="airport"></span>
+	</div>
+
+</body>
 </html>

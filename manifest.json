@@ -13,6 +13,7 @@
   },
   "permissions": [
     "unlimitedStorage",
-    "notifications"
+    "notifications",
+    "https://www.flighttimetv.com/*"
   ]
 }
