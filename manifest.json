@@ -1,0 +1,18 @@
+{
+  "name": "MetroClick Demo",
+  "description": "Test",
+  "manifest_version": 2,
+  "version": "1",
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}
